@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "type": "module",
-  "description": "CXMart backend — Fastify + Drizzle + Neon",
+  "description": "Ecommerce backend — Fastify + Drizzle + Neon",
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch --env-file=.env.local src/server.ts",
