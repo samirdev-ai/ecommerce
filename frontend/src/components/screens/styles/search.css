@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Core semantic tokens */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(15% 0 0);
+
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(15% 0 0);
+
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(15% 0 0);
+
+  --color-primary: oklch(48% 0.19 258);
+  --color-primary-foreground: oklch(98% 0 0);
+
+  --color-secondary: oklch(96% 0 0);
+  --color-secondary-foreground: oklch(20% 0 0);
+
+  --color-muted: oklch(96.5% 0 0);
+  --color-muted-foreground: oklch(46% 0 0);
+
+  --color-accent: oklch(95% 0.03 258);
+  --color-accent-foreground: oklch(30% 0.1 258);
+
+  --color-destructive: oklch(54% 0.22 25);
+  --color-destructive-foreground: oklch(98% 0 0);
+
+  --color-border: oklch(90% 0 0);
+  --color-input: oklch(90% 0 0);
+  --color-ring: oklch(58% 0.18 258);
+
+  --color-success: oklch(56% 0.15 155);
+  --color-success-foreground: oklch(98% 0 0);
+
+  --color-warning: oklch(76% 0.16 80);
+  --color-warning-foreground: oklch(20% 0.05 80);
+
+  --color-info: oklch(58% 0.15 240);
+  --color-info-foreground: oklch(98% 0 0);
+
+  /* Ecommerce-specific tokens */
+  --color-discount: oklch(54% 0.22 25);
+  --color-discount-foreground: oklch(98% 0 0);
+  --color-rating: oklch(76% 0.15 80);
+  --color-price: oklch(15% 0 0);
+  --color-price-original: oklch(58% 0 0);
+
+  --color-sale-bg: oklch(96% 0.05 25);
+  --color-sale-foreground: oklch(48% 0.2 25);
+
+  --color-badge-new: oklch(56% 0.15 200);
+  --color-badge-new-foreground: oklch(98% 0 0);
+  --color-badge-bestseller: oklch(60% 0.17 40);
+  --color-badge-bestseller-foreground: oklch(98% 0 0);
+  --color-badge-sponsored: oklch(50% 0 0);
+  --color-badge-sponsored-foreground: oklch(98% 0 0);
+  --color-badge-lowstock: oklch(76% 0.16 80);
+  --color-badge-lowstock-foreground: oklch(20% 0.05 80);
+
+  /* Radii */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.07), 0 1px 2px oklch(0% 0 0 / 0.05);
+  --shadow-md: 0 6px 16px oklch(0% 0 0 / 0.08), 0 2px 4px oklch(0% 0 0 / 0.04);
+  --shadow-popover: 0 12px 32px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.05);
+}
+
+.dark {
+  --color-background: oklch(15.5% 0 0);
+  --color-foreground: oklch(95% 0 0);
+
+  --color-card: oklch(19% 0 0);
+  --color-card-foreground: oklch(95% 0 0);
+
+  --color-popover: oklch(20% 0 0);
+  --color-popover-foreground: oklch(95% 0 0);
+
+  --color-primary: oklch(70% 0.16 258);
+  --color-primary-foreground: oklch(14% 0.03 258);
+
+  --color-secondary: oklch(25% 0 0);
+  --color-secondary-foreground: oklch(95% 0 0);
+
+  --color-muted: oklch(24% 0 0);
+  --color-muted-foreground: oklch(65% 0 0);
+
+  --color-accent: oklch(26% 0.04 258);
+  --color-accent-foreground: oklch(85% 0.06 258);
+
+  --color-destructive: oklch(62% 0.2 25);
+  --color-destructive-foreground: oklch(14% 0 0);
+
+  --color-border: oklch(28% 0 0);
+  --color-input: oklch(28% 0 0);
+  --color-ring: oklch(65% 0.16 258);
+
+  --color-success: oklch(68% 0.15 155);
+  --color-success-foreground: oklch(14% 0.03 155);
+
+  --color-warning: oklch(78% 0.15 80);
+  --color-warning-foreground: oklch(18% 0.04 80);
+
+  --color-info: oklch(70% 0.13 240);
+  --color-info-foreground: oklch(14% 0.03 240);
+
+  --color-discount: oklch(68% 0.19 25);
+  --color-discount-foreground: oklch(14% 0 0);
+  --color-rating: oklch(78% 0.14 80);
+  --color-price: oklch(96% 0 0);
+  --color-price-original: oklch(58% 0 0);
+
+  --color-sale-bg: oklch(26% 0.06 25);
+  --color-sale-foreground: oklch(80% 0.16 25);
+
+  --color-badge-new: oklch(65% 0.14 200);
+  --color-badge-new-foreground: oklch(14% 0.03 200);
+  --color-badge-bestseller: oklch(68% 0.15 40);
+  --color-badge-bestseller-foreground: oklch(14% 0.03 40);
+  --color-badge-sponsored: oklch(65% 0 0);
+  --color-badge-sponsored-foreground: oklch(14% 0 0);
+  --color-badge-lowstock: oklch(78% 0.15 80);
+  --color-badge-lowstock-foreground: oklch(18% 0.04 80);
+
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.3);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.4), 0 1px 2px oklch(0% 0 0 / 0.3);
+  --shadow-md: 0 6px 16px oklch(0% 0 0 / 0.45), 0 2px 4px oklch(0% 0 0 / 0.3);
+  --shadow-popover: 0 12px 32px oklch(0% 0 0 / 0.55), 0 4px 8px oklch(0% 0 0 / 0.3);
+}
+
+/* One-off layout tokens not part of the Tailwind color/radius/shadow namespaces */
+:root {
+  --z-header: 200;
+  --z-dropdown: 300;
+  --z-drawer: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes pulse-skeleton {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.animate-skeleton {
+  animation: pulse-skeleton 1.6s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.15s ease-out;
+}
+
+/* Scrollbars */
+.themed-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.themed-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.themed-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.themed-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 9999px;
+}
+.themed-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-muted-foreground);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

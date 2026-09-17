@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DESIGN TOKENS — Light theme (default)
+   ========================================================================== */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-background: oklch(99% 0.002 260);
+  --color-foreground: oklch(20% 0.01 260);
+
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(20% 0.01 260);
+
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(20% 0.01 260);
+
+  --color-primary: oklch(38% 0.11 260);
+  --color-primary-foreground: oklch(98% 0.005 260);
+
+  --color-secondary: oklch(95% 0.006 260);
+  --color-secondary-foreground: oklch(28% 0.01 260);
+
+  --color-muted: oklch(96% 0.004 260);
+  --color-muted-foreground: oklch(46% 0.015 260);
+
+  --color-accent: oklch(94% 0.02 260);
+  --color-accent-foreground: oklch(28% 0.02 260);
+
+  --color-destructive: oklch(54% 0.19 25);
+  --color-destructive-foreground: oklch(98% 0.005 25);
+
+  --color-border: oklch(90% 0.006 260);
+  --color-input: oklch(90% 0.006 260);
+  --color-ring: oklch(55% 0.09 260);
+
+  --color-success: oklch(52% 0.13 150);
+  --color-success-foreground: oklch(98% 0.01 150);
+  --color-success-subtle: oklch(95% 0.05 150);
+
+  --color-warning: oklch(58% 0.14 75);
+  --color-warning-foreground: oklch(98% 0.01 75);
+  --color-warning-subtle: oklch(95% 0.06 80);
+
+  --color-info: oklch(52% 0.12 240);
+  --color-info-foreground: oklch(98% 0.01 240);
+  --color-info-subtle: oklch(95% 0.03 240);
+
+  --color-danger: oklch(54% 0.19 25);
+  --color-danger-foreground: oklch(98% 0.01 25);
+  --color-danger-subtle: oklch(95% 0.05 25);
+
+  --color-neutral: oklch(50% 0.01 260);
+  --color-neutral-foreground: oklch(98% 0.005 260);
+  --color-neutral-subtle: oklch(94% 0.006 260);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.06), 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-md: 0 4px 10px oklch(0% 0 0 / 0.06), 0 2px 4px oklch(0% 0 0 / 0.04);
+  --shadow-lg: 0 10px 24px oklch(0% 0 0 / 0.08), 0 4px 8px oklch(0% 0 0 / 0.04);
+}
+
+/* ==========================================================================
+   Dark theme — not an inversion; deliberate surface + status recalibration
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: oklch(16% 0.008 260);
+    --color-foreground: oklch(94% 0.004 260);
+
+    --color-card: oklch(19% 0.009 260);
+    --color-card-foreground: oklch(94% 0.004 260);
+
+    --color-popover: oklch(20% 0.009 260);
+    --color-popover-foreground: oklch(94% 0.004 260);
+
+    --color-primary: oklch(80% 0.07 260);
+    --color-primary-foreground: oklch(18% 0.02 260);
+
+    --color-secondary: oklch(24% 0.01 260);
+    --color-secondary-foreground: oklch(90% 0.006 260);
+
+    --color-muted: oklch(23% 0.009 260);
+    --color-muted-foreground: oklch(66% 0.014 260);
+
+    --color-accent: oklch(27% 0.02 260);
+    --color-accent-foreground: oklch(92% 0.01 260);
+
+    --color-destructive: oklch(63% 0.18 25);
+    --color-destructive-foreground: oklch(98% 0.005 25);
+
+    --color-border: oklch(28% 0.01 260);
+    --color-input: oklch(28% 0.01 260);
+    --color-ring: oklch(70% 0.08 260);
+
+    --color-success: oklch(70% 0.14 150);
+    --color-success-foreground: oklch(15% 0.03 150);
+    --color-success-subtle: oklch(24% 0.05 150);
+
+    --color-warning: oklch(74% 0.13 80);
+    --color-warning-foreground: oklch(18% 0.03 80);
+    --color-warning-subtle: oklch(26% 0.06 80);
+
+    --color-info: oklch(72% 0.11 240);
+    --color-info-foreground: oklch(16% 0.03 240);
+    --color-info-subtle: oklch(24% 0.05 240);
+
+    --color-danger: oklch(68% 0.17 25);
+    --color-danger-foreground: oklch(16% 0.03 25);
+    --color-danger-subtle: oklch(26% 0.06 25);
+
+    --color-neutral: oklch(66% 0.01 260);
+    --color-neutral-foreground: oklch(16% 0.01 260);
+    --color-neutral-subtle: oklch(25% 0.008 260);
+
+    --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.35), 0 1px 2px oklch(0% 0 0 / 0.2);
+    --shadow-md: 0 4px 10px oklch(0% 0 0 / 0.35), 0 2px 4px oklch(0% 0 0 / 0.2);
+    --shadow-lg: 0 10px 24px oklch(0% 0 0 / 0.4), 0 4px 8px oklch(0% 0 0 / 0.2);
+  }
+}
+
+/* ==========================================================================
+   Base + accessibility
+   ========================================================================== */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Scrollbar styling
+   ========================================================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-muted-foreground);
+}
+
+/* Horizontal scroll containers without visible scrollbar (status tabs) */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   Minimal global utilities
+   ========================================================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sr-only-focusable:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}

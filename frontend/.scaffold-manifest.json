@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "patches": {
+    "domain/product.types.ts:product-seller-attr": true,
+    "domain/category.types.ts:category-page-shapes": true,
+    "domain/index.ts:category-filter-types": true,
+    "lib/format.ts:category-format-helpers": true,
+    "store/root-reducer.ts:category-slices": true,
+    "store/slices/ui.slice.ts:filter-drawer": true,
+    "config/index.ts:category-config": true,
+    "mocks/index.ts:category-mocks": true
+  }
+}

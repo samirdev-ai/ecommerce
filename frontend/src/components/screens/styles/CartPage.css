@@ -1,0 +1,279 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   globals.css — Tailwind CSS v4 design system
+   Enterprise ecommerce Cart screen — light & dark themes, OKLCH tokens
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand ──────────────────────────────────────────────────────────────── */
+  --color-brand-50:  oklch(97% 0.014 255);
+  --color-brand-100: oklch(93% 0.032 255);
+  --color-brand-200: oklch(87% 0.064 255);
+  --color-brand-300: oklch(79% 0.100 255);
+  --color-brand-400: oklch(68% 0.140 255);
+  --color-brand-500: oklch(56% 0.180 255);
+  --color-brand-600: oklch(49% 0.196 255);
+  --color-brand-700: oklch(41% 0.178 255);
+  --color-brand-800: oklch(33% 0.148 255);
+  --color-brand-900: oklch(26% 0.110 255);
+
+  /* ── Core semantic tokens — LIGHT (default) ────────────────────────────── */
+  --color-background:        oklch(98.5% 0 0);
+  --color-foreground:        oklch(15%   0 0);
+
+  --color-card:               oklch(100% 0 0);
+  --color-card-foreground:    oklch(15%  0 0);
+
+  --color-popover:            oklch(100% 0 0);
+  --color-popover-foreground: oklch(15%  0 0);
+
+  --color-primary:            oklch(49% 0.196 255);
+  --color-primary-foreground: oklch(100% 0 0);
+
+  --color-secondary:            oklch(95% 0 0);
+  --color-secondary-foreground: oklch(20% 0 0);
+
+  --color-muted:            oklch(95.5% 0 0);
+  --color-muted-foreground: oklch(46%   0 0);
+
+  --color-accent:            oklch(96% 0.02 255);
+  --color-accent-foreground: oklch(30% 0.05 255);
+
+  --color-destructive:            oklch(55% 0.215 25);
+  --color-destructive-foreground: oklch(100% 0 0);
+
+  --color-border: oklch(90% 0 0);
+  --color-input:  oklch(90% 0 0);
+  --color-ring:   oklch(56% 0.180 255);
+
+  --color-success:         oklch(52% 0.150 150);
+  --color-success-subtle:  oklch(95% 0.040 150);
+  --color-warning:         oklch(64% 0.170 75);
+  --color-warning-subtle:  oklch(96% 0.045 75);
+  --color-info:            oklch(53% 0.180 240);
+  --color-info-subtle:     oklch(95% 0.040 240);
+  --color-destructive-subtle: oklch(96% 0.040 25);
+
+  /* ── Sidebar / surfaces used by header & footer chrome ─────────────────── */
+  --color-surface:          oklch(100%   0 0);
+  --color-surface-elevated: oklch(100%   0 0);
+  --color-surface-sunken:   oklch(96.5%  0 0);
+
+  /* ── Typography ─────────────────────────────────────────────────────────── */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --text-2xs:  0.6875rem;
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+
+  /* ── Radius ─────────────────────────────────────────────────────────────── */
+  --radius-sm:  0.375rem;
+  --radius-md:  0.5rem;
+  --radius-lg:  0.75rem;
+  --radius-xl:  1rem;
+  --radius-pill: 62.5rem;
+
+  /* ── Shadows (restrained) ───────────────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.06), 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-md: 0 4px 10px oklch(0% 0 0 / 0.07), 0 2px 4px oklch(0% 0 0 / 0.04);
+  --shadow-lg: 0 12px 24px oklch(0% 0 0 / 0.10), 0 4px 8px oklch(0% 0 0 / 0.05);
+
+  /* ── Charts (kept for potential mini-trend usage) ──────────────────────── */
+  --color-chart-1: oklch(56% 0.180 255);
+  --color-chart-2: oklch(52% 0.150 150);
+  --color-chart-3: oklch(64% 0.170 75);
+  --color-chart-4: oklch(55% 0.215 25);
+  --color-chart-5: oklch(55% 0.175 310);
+
+  /* ── Motion ─────────────────────────────────────────────────────────────── */
+  --duration-fast: 100ms;
+  --duration-base: 150ms;
+  --duration-slow: 250ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Dark theme ───────────────────────────────────────────────────────────── */
+.dark {
+  --color-background:        oklch(15% 0 0);
+  --color-foreground:        oklch(95% 0 0);
+
+  --color-card:               oklch(18% 0 0);
+  --color-card-foreground:    oklch(95% 0 0);
+
+  --color-popover:            oklch(18% 0 0);
+  --color-popover-foreground: oklch(95% 0 0);
+
+  --color-primary:            oklch(70% 0.150 255);
+  --color-primary-foreground: oklch(14% 0 0);
+
+  --color-secondary:            oklch(24% 0 0);
+  --color-secondary-foreground: oklch(92% 0 0);
+
+  --color-muted:            oklch(22% 0 0);
+  --color-muted-foreground: oklch(64% 0 0);
+
+  --color-accent:            oklch(24% 0.03 255);
+  --color-accent-foreground: oklch(85% 0.05 255);
+
+  --color-destructive:            oklch(62% 0.200 25);
+  --color-destructive-foreground: oklch(97% 0 0);
+
+  --color-border: oklch(27% 0 0);
+  --color-input:  oklch(27% 0 0);
+  --color-ring:   oklch(70% 0.150 255);
+
+  --color-success:        oklch(70% 0.150 150);
+  --color-success-subtle: oklch(24% 0.05 150);
+  --color-warning:        oklch(76% 0.150 75);
+  --color-warning-subtle: oklch(26% 0.05 75);
+  --color-info:           oklch(72% 0.140 240);
+  --color-info-subtle:    oklch(24% 0.05 240);
+  --color-destructive-subtle: oklch(26% 0.06 25);
+
+  --color-surface:          oklch(17% 0 0);
+  --color-surface-elevated: oklch(20% 0 0);
+  --color-surface-sunken:   oklch(12% 0 0);
+
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.30);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.40), 0 1px 2px oklch(0% 0 0 / 0.30);
+  --shadow-md: 0 4px 10px oklch(0% 0 0 / 0.45), 0 2px 4px oklch(0% 0 0 / 0.30);
+  --shadow-lg: 0 12px 24px oklch(0% 0 0 / 0.55), 0 4px 8px oklch(0% 0 0 / 0.35);
+}
+
+/* Respect OS-level preference when no explicit class is set */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+  }
+}
+
+/* ─── Base layer ───────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  /* ── Focus ──────────────────────────────────────────────────────────────── */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ── Selection ──────────────────────────────────────────────────────────── */
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  /* ── Scrollbar ──────────────────────────────────────────────────────────── */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: var(--radius-pill);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-muted-foreground);
+    background-clip: content-box;
+  }
+
+  /* ── Reduced motion ─────────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+}
+
+/* ─── Minimal global utilities (genuinely shared, not component-specific) ──── */
+@layer utilities {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-muted) 25%,
+      var(--color-border) 50%,
+      var(--color-muted) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer var(--duration-slow) ease-in-out infinite;
+  }
+
+  @keyframes skeleton-shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .fade-in {
+    animation: fade-in var(--duration-slow) var(--ease-standard) both;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+/* ============================================================================
+ * DESIGN SYSTEM — Meridian Commerce
+ * A restrained, trustworthy financial-adjacent palette: deep indigo primary,
+ * neutral slate surfaces, and clearly distinct semantic colors so payment
+ * status is never communicated by color alone (always paired with text/icon).
+ * ==========================================================================*/
+
+@theme inline {
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+
+  --color-popover: oklch(var(--popover));
+  --color-popover-foreground: oklch(var(--popover-foreground));
+
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+
+  --color-success: oklch(var(--success));
+  --color-warning: oklch(var(--warning));
+  --color-info: oklch(var(--info));
+
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+:root {
+  --background: 0.985 0.002 247;
+  --foreground: 0.205 0.015 255;
+
+  --card: 1 0 0;
+  --card-foreground: 0.205 0.015 255;
+
+  --popover: 1 0 0;
+  --popover-foreground: 0.205 0.015 255;
+
+  --primary: 0.365 0.135 264;
+  --primary-foreground: 0.985 0.005 260;
+
+  --secondary: 0.95 0.006 255;
+  --secondary-foreground: 0.28 0.02 255;
+
+  --muted: 0.955 0.006 255;
+  --muted-foreground: 0.485 0.02 258;
+
+  --accent: 0.93 0.03 255;
+  --accent-foreground: 0.28 0.02 255;
+
+  --destructive: 0.55 0.2 25;
+  --destructive-foreground: 0.985 0.005 20;
+
+  --success: 0.52 0.13 155;
+  --warning: 0.62 0.15 75;
+  --info: 0.5 0.14 235;
+
+  --border: 0.9 0.006 255;
+  --input: 0.88 0.008 255;
+  --ring: 0.365 0.135 264;
+}
+
+.dark {
+  --background: 0.16 0.014 258;
+  --foreground: 0.94 0.006 255;
+
+  --card: 0.205 0.015 258;
+  --card-foreground: 0.94 0.006 255;
+
+  --popover: 0.205 0.015 258;
+  --popover-foreground: 0.94 0.006 255;
+
+  --primary: 0.72 0.11 264;
+  --primary-foreground: 0.16 0.02 264;
+
+  --secondary: 0.26 0.016 258;
+  --secondary-foreground: 0.92 0.006 255;
+
+  --muted: 0.245 0.016 258;
+  --muted-foreground: 0.66 0.018 258;
+
+  --accent: 0.3 0.03 260;
+  --accent-foreground: 0.94 0.006 255;
+
+  --destructive: 0.66 0.19 25;
+  --destructive-foreground: 0.16 0.02 20;
+
+  --success: 0.68 0.15 155;
+  --warning: 0.75 0.15 80;
+  --info: 0.68 0.13 235;
+
+  --border: 0.32 0.016 258;
+  --input: 0.34 0.018 258;
+  --ring: 0.72 0.11 264;
+}
+
+/* ============================================================================
+ * BASE
+ * ==========================================================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  border-color: oklch(var(--border));
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: oklch(var(--background));
+  color: oklch(var(--foreground));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background-color: oklch(var(--primary) / 0.22);
+  color: oklch(var(--foreground));
+}
+
+/* Consistent, visible keyboard focus everywhere — never rely on browser
+   defaults, but never remove them without replacing them. */
+:focus-visible {
+  outline: 2px solid oklch(var(--ring));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Numeric alignment for masked digits, expirations, and amounts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================================
+ * SCROLLBAR
+ * ==========================================================================*/
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(var(--muted-foreground) / 0.4) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: oklch(var(--muted-foreground) / 0.35);
+  border-radius: 999px;
+  border: 2px solid oklch(var(--background));
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: oklch(var(--muted-foreground) / 0.55);
+}
+
+/* ============================================================================
+ * MOTION — restrained, purposeful; respects reduced-motion preference
+ * ==========================================================================*/
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fade-in 150ms ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .animate-slide-in-left {
+    animation: slide-in-left 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+button, input, select {
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}

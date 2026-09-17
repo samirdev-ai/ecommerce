@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(100% 0 0);
+  --foreground: oklch(15% 0.01 260);
+
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(15% 0.01 260);
+
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(15% 0.01 260);
+
+  --primary: oklch(38% 0.14 260);
+  --primary-foreground: oklch(98% 0.005 260);
+
+  --secondary: oklch(96% 0.005 260);
+  --secondary-foreground: oklch(25% 0.02 260);
+
+  --muted: oklch(96% 0.005 260);
+  --muted-foreground: oklch(48% 0.015 260);
+
+  --accent: oklch(93% 0.05 85);
+  --accent-foreground: oklch(32% 0.08 70);
+
+  --destructive: oklch(55% 0.22 25);
+  --destructive-foreground: oklch(98% 0.005 25);
+
+  --border: oklch(90% 0.005 260);
+  --input: oklch(87% 0.006 260);
+  --ring: oklch(55% 0.14 260);
+
+  --success: oklch(56% 0.15 155);
+  --success-foreground: oklch(98% 0.01 155);
+
+  --warning: oklch(70% 0.16 75);
+  --warning-foreground: oklch(25% 0.05 75);
+
+  --info: oklch(58% 0.15 245);
+  --info-foreground: oklch(98% 0.01 245);
+
+  /* ── Ecommerce-specific visual tokens ─────────────────────────────── */
+  --price: oklch(20% 0.02 260);
+  --price-muted: oklch(60% 0.01 260);
+  --discount: oklch(52% 0.21 25);
+  --rating: oklch(75% 0.15 80);
+  --sale: oklch(96% 0.04 25);
+  --sale-foreground: oklch(45% 0.18 25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(15% 0.01 260);
+    --foreground: oklch(96% 0.005 260);
+
+    --card: oklch(19% 0.012 260);
+    --card-foreground: oklch(96% 0.005 260);
+
+    --popover: oklch(19% 0.012 260);
+    --popover-foreground: oklch(96% 0.005 260);
+
+    --primary: oklch(78% 0.11 260);
+    --primary-foreground: oklch(15% 0.02 260);
+
+    --secondary: oklch(24% 0.012 260);
+    --secondary-foreground: oklch(92% 0.005 260);
+
+    --muted: oklch(24% 0.012 260);
+    --muted-foreground: oklch(66% 0.012 260);
+
+    --accent: oklch(30% 0.05 80);
+    --accent-foreground: oklch(90% 0.04 85);
+
+    --destructive: oklch(62% 0.20 25);
+    --destructive-foreground: oklch(97% 0.01 25);
+
+    --border: oklch(28% 0.012 260);
+    --input: oklch(32% 0.012 260);
+    --ring: oklch(70% 0.12 260);
+
+    --success: oklch(68% 0.15 155);
+    --success-foreground: oklch(16% 0.03 155);
+
+    --warning: oklch(75% 0.15 75);
+    --warning-foreground: oklch(20% 0.04 75);
+
+    --info: oklch(70% 0.14 245);
+    --info-foreground: oklch(16% 0.03 245);
+
+    --price: oklch(95% 0.005 260);
+    --price-muted: oklch(55% 0.012 260);
+    --discount: oklch(70% 0.19 25);
+    --rating: oklch(78% 0.14 80);
+    --sale: oklch(28% 0.06 25);
+    --sale-foreground: oklch(85% 0.08 25);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-price: var(--price);
+  --color-price-muted: var(--price-muted);
+  --color-discount: var(--discount);
+  --color-rating: var(--rating);
+  --color-sale: var(--sale);
+  --color-sale-foreground: var(--sale-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+* , *::before, *::after {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  font-family: var(--font-sans);
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "cv11", "ss01";
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ── Focus ─────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Selection ─────────────────────────────────────────────────────── */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Scrollbar utilities ───────────────────────────────────────────── */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.themed-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.themed-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.themed-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.themed-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 9999px;
+}
+.themed-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-muted-foreground);
+}
+
+/* ── Native <details> marker cleanup (used by the Disclosure primitive) ──── */
+summary::-webkit-details-marker {
+  display: none;
+}
